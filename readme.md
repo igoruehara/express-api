@@ -6,6 +6,7 @@ cd express-api
 docker-compose up -d
 cp .env.example .env
 yarn
+yarn sequelize db:migrate
 
 yarn dev (http://localhost:3000)
 ```
@@ -34,6 +35,8 @@ yarn dev (http://localhost:3000)
 - [Nodemailer](https://nodemailer.com/about/)
 - [Sequelize](https://sequelize.org/master/)
 - [Sequelize-cli](https://github.com/sequelize/cli)
+- [Sentry.io](https://sentry.io/organizations/new/)
+- [Jest](https://jestjs.io/)
 
 ## Usage
 
@@ -41,8 +44,3 @@ Clone the repository and follow the docs to install project.
 
 In the moment use the base of project to create new files and read the documentation packages to implements new features.
 Use best practices(Solid, CodeClean) for writing new features... :)
-
-
-## How to think
-
-![fluxo](https://user-images.githubusercontent.com/34796888/62429124-f7554180-b6e0-11e9-8d1d-5b9ba27fe9da.png)
