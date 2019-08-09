@@ -44,3 +44,9 @@ Clone the repository and follow the docs to install project.
 
 In the moment use the base of project to create new files and read the documentation packages to implements new features.
 Use best practices(Solid, CodeClean) for writing new features... :)
+
+## Tips to programming
+
+![github](https://user-images.githubusercontent.com/34796888/62747962-2ba46700-ba2d-11e9-882e-2c0beedd1671.png)
+
+
