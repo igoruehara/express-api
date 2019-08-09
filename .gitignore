@@ -1,0 +1,7 @@
+node_modules
+__tests__/coverage/
+__tests__/database/database.sqlite
+
+yarn.lock
+yarn-error.log
+.env
