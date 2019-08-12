@@ -41,7 +41,7 @@ DatasetUser.init(
   },
   {
     sequelize,
-    modelName: 'datasetUsers',
+    modelName: 'datasetUser',
     tableName: 'dataset_users',
   }
 );

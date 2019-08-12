@@ -44,6 +44,6 @@ User.addHook('beforeCreate', async user => {
  * Assosiations with DATASET_USERS
  */
 User.hasOne(DatasetUser, { as: 'dataset', foreignKey: 'user_id' });
-DatasetUser.belongsTo(User, { as: 'users', foreignKey: 'user_id' });
+DatasetUser.belongsTo(User, { as: 'user', foreignKey: 'user_id' });
 
 module.exports = User;

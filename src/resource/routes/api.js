@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const authMiddleware = require('../../app/http/middlewares/AuthMiddleware');
-const { request } = require('../../app/http/middlewares/RequestMiddleware');
+const authMiddleware = require('../../app/middlewares/AuthMiddleware');
+const { request } = require('../../app/middlewares/RequestMiddleware');
 
 /**
  * Open Routes
@@ -12,9 +12,9 @@ router.get('/', (req, res) => res.json({ msg: 'okay' }));
 
 const usersRoutes = router;
 const sessionRoutes = router;
-const UserRequest = require('../../app/http/requests/users/UserRequest');
-const UserController = require('../../app/http/controllers/users/UserController');
-const SessionController = require('../../app/http/controllers/auth/SessionController');
+const UserRequest = require('../../app/requests/users/UserRequest');
+const UserController = require('../../app/controllers/http/users/UserController');
+const SessionController = require('../../app/controllers/http/auth/SessionController');
 
 usersRoutes.post('/users/', request(UserRequest.post), UserController.store);
 sessionRoutes.post('/sessions', SessionController.store);
