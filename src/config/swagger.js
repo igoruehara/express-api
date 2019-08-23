@@ -14,4 +14,13 @@ module.exports = {
   schemes: ['http'],
   consumes: ['application/json'],
   produces: ['application/json'],
+  securityDefinitions: {
+    bearerAuth: {
+      type: 'apiKey',
+      name: 'authorization',
+      schema: 'bearer',
+      in: 'header',
+    },
+  },
+  security: [{ bearerAuth: [] }],
 };

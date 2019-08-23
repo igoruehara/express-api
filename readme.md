@@ -37,6 +37,7 @@ yarn dev (http://localhost:3000)
 - [Sequelize-cli](https://github.com/sequelize/cli)
 - [Sentry.io](https://sentry.io/organizations/new/)
 - [Jest](https://jestjs.io/)
+- [Swagger](https://swagger.io/docs/specification/basic-structure/)
 
 ## Usage
 

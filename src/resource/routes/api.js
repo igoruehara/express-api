@@ -1,16 +1,18 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 
+const swaggerDocs = require('../swagger');
+
 const router = express.Router();
 
-const swaggerDocs = require('./swagger');
+/**
+ * Swagger Router
+ */
+router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-router.use(
-  '/api-docs',
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocs, { explorer: true })
-);
-
+/**
+ * Middlewares
+ */
 const authMiddleware = require('../../app/middlewares/AuthMiddleware');
 const { request } = require('../../app/middlewares/RequestMiddleware');
 
