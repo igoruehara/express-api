@@ -12,6 +12,11 @@ const routes = require('./resource/routes/api');
 const sentryConfig = require('./config/sentry');
 require('./databases');
 
+const log = require('./config/logger');
+
+log.info(JSON.stringify({ msg: 'Logger test' }));
+console.logger.log('warn', 'Logger test');
+
 class App {
   constructor() {
     this.server = express();
