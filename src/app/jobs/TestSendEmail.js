@@ -5,8 +5,9 @@ class TestSendEmail {
     return 'TestSendEmail';
   }
 
-  async handle(job, done) {
+  async handle(job) {
     const { content } = job.data;
+    console.log('passou aqui');
     Mail.sendMail({
       from: '<foo@example.com>', // sender address
       to: 'baz@example.com', // list of receivers
@@ -16,8 +17,6 @@ class TestSendEmail {
         data: content,
       },
     });
-
-    return done();
   }
 }
 

@@ -22,13 +22,9 @@ class UserController {
       user: user.dataValues,
     });
 
-    Queue.create(TestSendEmail.key, {
+    Queue.add(TestSendEmail.key, {
       content: { name: user.name },
-    })
-      .priority('high')
-      .backoff({ delay: 5000, type: 'fixed' })
-      .attempts(5)
-      .save();
+    });
 
     return res.status(200).json({ user, mongo });
   }
