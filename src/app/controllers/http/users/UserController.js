@@ -2,8 +2,7 @@ const User = require('../../../models/users/User');
 const DatasetUser = require('../../../models/users/DatasetUser');
 const UserSchema = require('../../../schemas/users/UserSchema');
 
-const TestSendEmail = require('../../../jobs/TestSendEmail');
-const Queue = require('../../../libs/Queue');
+const TestSendEmailJob = require('../../../jobs/TestSendEmailJob');
 
 class UserController {
   async index(req, res) {
@@ -11,6 +10,18 @@ class UserController {
       include: [{ model: DatasetUser, as: 'dataset' }],
       attributes: ['id', 'name', 'email'],
     });
+
+    TestSendEmailJob.init(
+      'nameJob',
+      { name: 'William' },
+      {
+        priority: 10,
+        attempts: 3,
+        delay: 2000,
+        timeout: 10000,
+      }
+    ).status();
+
     return res.status(200).json(user);
   }
 
@@ -20,10 +31,6 @@ class UserController {
       email: user.email,
       user_id: user.id,
       user: user.dataValues,
-    });
-
-    Queue.add(TestSendEmail.key, {
-      content: { name: user.name },
     });
 
     return res.status(200).json({ user, mongo });
